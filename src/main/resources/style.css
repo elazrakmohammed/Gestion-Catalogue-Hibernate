@@ -1,0 +1,51 @@
+/* Style global de la fenêtre */
+.root {
+    -fx-background-color: #f8f9fa; /* Gris très clair moderne */
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Personnalisation des boutons */
+.button {
+    -fx-cursor: hand;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 15px;
+    -fx-font-weight: bold;
+}
+
+/* Effet de survol sur le bouton vider */
+#btnActualiser {
+    -fx-background-color: #e9ecef;
+    -fx-text-fill: #495057;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5px;
+}
+#btnActualiser:hover {
+    -fx-background-color: #dee2e6;
+}
+
+/* Amélioration des champs de texte et ComboBox */
+.text-field, .combo-box {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ced4da;
+    -fx-background-color: white;
+    -fx-padding: 6px;
+}
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #2196F3; /* Bordure bleue quand on clique dedans */
+}
+
+/* Design du Tableau */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+}
+.table-view .column-header {
+    -fx-background-color: #e9ecef;
+    -fx-padding: 8px;
+}
+.table-view .table-row-cell:selected {
+    -fx-background-color: #bde0fe; /* Couleur de sélection plus douce */
+    -fx-text-fill: black;
+}

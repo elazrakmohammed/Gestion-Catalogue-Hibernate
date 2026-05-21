@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.mycompany.hibernate_project.controller.ProduitController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+
+    <VBox spacing="10.0" prefWidth="300.0">
+        <Label text="Gestion du Produit" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+        
+        <Label text="Code du produit:"/>
+        <TextField fx:id="txtCode" promptText="Ex: PRD-001"/>
+        
+        <Label text="Libellé:"/>
+        <TextField fx:id="txtLibelle" promptText="Ex: Tomates pelées"/>
+        
+        <Label text="Type:"/>
+        <ComboBox fx:id="cbType" prefWidth="300.0" promptText="Sélectionner un type"/>
+        
+        <Label text="Quantité en stock:"/>
+        <TextField fx:id="txtQuantite" promptText="Ex: 50"/>
+        
+        <CheckBox fx:id="chkDispo" text="Disponible à la vente"/>
+        
+        <HBox spacing="10.0" alignment="CENTER">
+            <Button fx:id="btnAjouter" text="Ajouter" onAction="#handleAjouter" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifier" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimer" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        </HBox>
+        <Button fx:id="btnActualiser" text="Vider le formulaire" prefWidth="300.0" onAction="#handleActualiser"/>
+    </VBox>
+
+    <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="Rechercher : " style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtRecherche" promptText="Tapez un libellé ou un type..." HBox.hgrow="ALWAYS"/>
+        </HBox>
+        
+        <TableView fx:id="tableProduits" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50.0"/>
+                <TableColumn fx:id="colCode" text="Code" prefWidth="90.0"/>
+                <TableColumn fx:id="colLibelle" text="Libellé" prefWidth="180.0"/>
+                <TableColumn fx:id="colType" text="Type" prefWidth="120.0"/>
+                <TableColumn fx:id="colQuantite" text="Quantité" prefWidth="80.0"/>
+                <TableColumn fx:id="colDispo" text="Dispo." prefWidth="70.0"/>
+            </columns>
+        </TableView>
+    </VBox>
+</HBox>
